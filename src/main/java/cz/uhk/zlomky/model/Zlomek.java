@@ -37,6 +37,24 @@ public class Zlomek {
         return new Zlomek(citatel * druhy.jmenovatel, jmenovatel * druhy.citatel);
     }
 
+    public Zlomek zkrat() {
+        int a = Math.abs(citatel);
+        int b = Math.abs(jmenovatel);
+        if (a < b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        int zb;
+        do {
+            zb = a % b;
+            a = b;
+            b = zb;
+            //System.out.println("log zb: " + zb);
+        } while (zb != 0);
+        return new Zlomek(citatel / a, jmenovatel / a);
+    }
+
     @Override
     public String toString() {
         return String.format("%d / %d", citatel, jmenovatel);
