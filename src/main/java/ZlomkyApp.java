@@ -7,8 +7,13 @@ public class ZlomkyApp {
         System.out.println("Zlomkoaplikace");
 
         Zlomek a = new Zlomek(3, 4);
+        Zlomek b = new Zlomek(2,5);
 
-        System.out.printf("Zlomek = %s", a.toString());
+        System.out.printf("a + b = %s\n", a.secti(b));
+        System.out.printf("a - b = %s\n", a.odecti(b));
+        System.out.printf("a / b = %s\n", a.vynasob(b));
+        System.out.printf("a * b = %s\n", a.vydel(b));
+
     }
 
 }
