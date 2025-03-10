@@ -45,11 +45,12 @@ public class SeznamZlomku {
 // ■ spoctiPrumer(): vypočítá a vrátí průměr všech zlomků v seznamu
 
     public Zlomek spoctiPrumer() {
-        Zlomek soucet = new Zlomek(0, 1);
-        for (Zlomek zlomek : zlomky) {
-            soucet = soucet.secti(zlomek);
+        if (zlomky.isEmpty()) {
+            return new Zlomek(0, 1);
         }
-        return soucet.zkrat();
+        
+        Zlomek soucet = spoctiSoucet();
+        return soucet.vynasob(new Zlomek(1, zlomky.size())).zkrat();
     }
 
 
